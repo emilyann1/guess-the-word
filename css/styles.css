@@ -11,21 +11,25 @@ body {
   font-style: normal;
   font-size: 20px;
   line-height: 150%;
-  background-color: #dff6f6;
-  background-image: url("../img/bg.png");
+  background-color: #f7bcd949;
+  background-image: url("../img/color-bg.png");
   background-size: 800px;
   background-repeat: repeat;
   color: #305050;
+  background-blend-mode: lighten;
 }
 
 .logo {
-  width: 70%;
-  max-width: 484px;
+  width: 60%;
+  max-width: 350px;
+  background-color:rgba(252, 232, 146, 0.87);
+  border-radius: 10%;
 }
 
 h1 {
   width: 100%;
   padding-top: 1em;
+  padding-bottom: .5em;
   margin: 0;
   font-family: "Unlock", sans-serif;
   font-style: normal;
@@ -51,7 +55,7 @@ h1 {
 
 .highlight {
   padding: 0.25em;
-  background: #ffe2d6;
+  background: #ff9eb6;
   font-size: 1em;
 }
 
@@ -62,8 +66,9 @@ h1 {
 
 .word-in-progress {
   letter-spacing: 15px;
-  color: #28bdbd;
+  color: #af1c6d;
   font-size: 30px;
+  margin-top: 0;
 }
 
 .guessed-letters {
@@ -78,6 +83,7 @@ h1 {
 
 .message {
   text-align: center;
+  margin-top: 0;
 }
 
 .guess-form {
@@ -99,13 +105,13 @@ input {
   font-size: 1.5em;
   margin-top: 0.5em;
   padding: 0.5em;
-  border: 3px solid #28bdbd;
+  border: 3px solid #232525;
 }
 
 input:active,
 input:focus {
   outline: 0;
-  border: 4px solid #28bdbd;
+  border: 4px solid #4b949e;
 }
 
 .guess,
@@ -113,8 +119,9 @@ input:focus {
   padding: 1em 3em;
   border-radius: 50px;
   margin-top: 1em;
+  margin-bottom: 1em;
   color: #fff;
-  background: #ff8d5c;
+  background: #ff7295;
   font-size: 1em;
   align-self: center;
   outline: none;
@@ -134,10 +141,22 @@ input:focus {
   color: white;
 }
 
-/* animatied background */
+a {
+  text-decoration: none;
+}
+
+.footer {
+  font-size: .6em;
+  margin: 0;
+}
+#emily {
+  margin-bottom: 1em;
+}
+
+/* animated background */
 .win {
   padding: 0 1em;
-  background: linear-gradient(-45deg, #ff9d64, #f5620c);
+  background: linear-gradient(-45deg, #fcfa99, #fcff2f);
   background-size: 400% 400%;
   animation: gradient 2s ease infinite;
 }

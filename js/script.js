@@ -12,7 +12,7 @@ let guessedLetters = [];
 let remainingGuesses = 8;
 
 const getWord = async function () {
-    const response = await fetch("https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt");
+    const response = await fetch("https://gist.githubusercontent.com/redrambles/c72ae70504e304519b0e187b0f3dc1a4/raw/72db8cf89b7f5e6f804527c879e800bd6fb0d93c/words.txt");
     const words = await response.text();
     const wordArray = words.split("\n");
     const wordIndex = Math.floor(Math.random() * wordArray.length);
@@ -22,7 +22,7 @@ const getWord = async function () {
 
 getWord();
 
-// Display our symbols as placeholders for the chosen word's letters
+// Display symbols as placeholders for the chosen word's letters
 const placeholder = function (word) {
     const placeLetters = [];
     for (const letter of word) {
@@ -31,9 +31,6 @@ const placeholder = function (word) {
     }
    wordInProgress.innerText = placeLetters.join("");
 };
-
-placeholder(word);
-
 // Guess Button that is clicked after each letter is input, clears when clicked
 
 guessButton.addEventListener("click", function (e) {
@@ -53,7 +50,7 @@ guessButton.addEventListener("click", function (e) {
 
 // Function to check player's input
 const valid = function (input) {
-    const acceptedLetter = /[a-z/A-Z]/;
+    const acceptedLetter = /[a-zA-Z]/;
     // is input empty?
     if (input.length === 0) {
         guessReply.innerText = "Please guess a letter!";
@@ -115,7 +112,7 @@ const updateWordInProgress = function (guessedLetters) {
 const countGuesses = function (guess) {
     const upperWord = word.toUpperCase();
     if (!upperWord.includes(guess)) {
-        guessReply.innerText = `Oops! The word doesn't contain ${guess}!`;
+        guessReply.innerText = `Oops! The word does not contain ${guess}!`;
         remainingGuesses -= 1;
     } else {
         guessReply.innerText = `Way to go! The word contains the letter ${guess}!`;
@@ -129,7 +126,6 @@ const countGuesses = function (guess) {
     } else {
         remainingSpan.innerText = `${remainingGuesses} guesses`;
     }
-
 };
 
 const checkWinner = function () {
