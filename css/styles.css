@@ -12,7 +12,7 @@ body {
   font-size: 20px;
   line-height: 150%;
   background-color: #f7bcd949;
-  background-image: url("../img/color-bg.png");
+  background-image: url("../img/bg-3.png");
   background-size: 800px;
   background-repeat: repeat;
   color: #305050;
@@ -20,8 +20,8 @@ body {
 }
 
 .logo {
-  width: 60%;
-  max-width: 350px;
+  width: 30%;
+  max-width: 250px;
   background-color:rgba(252, 232, 146, 0.87);
   border-radius: 10%;
 }
