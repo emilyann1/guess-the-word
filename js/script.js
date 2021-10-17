@@ -31,15 +31,12 @@ const placeholder = function (word) {
     }
    wordInProgress.innerText = placeLetters.join("");
 };
-// Guess Button that is clicked after each letter is input, clears when clicked
 
+// Guess Button that is clicked after each letter is input, clears when clicked
 guessButton.addEventListener("click", function (e) {
     e.preventDefault();
-    // empty message paragraph
     guessReply.innerText = "";
-    // gets what's put in input box
     const guess = letterInput.value;
-    // checks for single letter
     const checkLetter = valid(guess);
     
     if (checkLetter) {
@@ -51,14 +48,11 @@ guessButton.addEventListener("click", function (e) {
 // Function to check player's input
 const valid = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
-    // is input empty?
     if (input.length === 0) {
         guessReply.innerText = "Please guess a letter!";
     } else if (input.length > 1) {
-        // put in more than one letter?
         guessReply.innerText = "Please guess just ONE letter!";
     } else if (!input.match(acceptedLetter)) {
-        //guessed non letter thingy?
         guessReply.innerText = "Please guess a letter!";
     } else {
         return input;
@@ -66,7 +60,6 @@ const valid = function (input) {
 };
 
 const makeGuess = function (guess) {
-    // converts the letters all to uppercase
     guess = guess.toUpperCase();
     if (guessedLetters.includes(guess)) {
         guessReply.innerText = "You already guessed that letter! Try again, silly!";
@@ -80,9 +73,7 @@ const makeGuess = function (guess) {
 };
 
 const updateLetters = function () {
-    //empty innerHTML of ul where guessed letters will display
     guessList.innerHTML = "";
-    //create new list item for each letter inside guessedLetters array
      for (const guess of guessedLetters) {   
         const li = document.createElement("li");
         li.innerText = guess;
@@ -91,13 +82,10 @@ const updateLetters = function () {
 };
 
 const updateWordInProgress = function (guessedLetters) {
-    //changes word variable to uppercase, splits the word into a string
     const wordUpper = word.toUpperCase();
     const wordArray = wordUpper.split("");
     const showLettersArray = [];
     
-    //check if wordArray contains any guessed letters, if yes, 
-    //update circle symbol to correct letter
     for (const letter of wordArray) {
         if (guessedLetters.includes(letter)) {
             showLettersArray.push(letter.toUpperCase());
